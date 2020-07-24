@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/vanilla-semantic-ui@0.0.1/dist/vanilla-semantic.min.css">
+  <title>CATI phone dialer</title>
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    table.ui.table {
+      display: none;
+      font-size: 30px;
+    }
+
+    table.ui.table td {
+      cursor: pointer;
+    }
+
+    table.ui.table td:hover {
+      background-color: rgb(233, 233, 233);
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id='loader' class="ui dimmer">
+    <div class="ui loader"></div>
+  </div>
+  <div class="ui center aligned stackable grid">
+    <div class="row">
+      <div class="column" style="padding: 3em 0 !important; ">
+
+        <span id="output-color" class="ui tiny orange circular label"></span>&nbsp;<span class="ui large header"
+          id="output-lbl">Ready</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six wide left aligned column">
+        <div class="ui form">
+          <div class="field">
+            <label>Name</label>
+            <div class="ui acion input">
+              <input id="client-name" type="text" name="clientName" placeholder="e.g Ejiro_maina" required>
+            </div>
+          </div>
+          <div class="field">
+            <button id="login-btn" class="ui positive button">Register</button>
+            <button id="logout-btn" class="ui negative button" disabled>Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six wide left aligned column">
+        <div class="ui form">
+          <div class="field">
+            <label>Call</label>
+            <div class="ui action input">
+              <input type="text" value="" id="call-to" placeholder="Enter phone number to call" disabled>
+              <button id="call-btn" class="ui teal right labeled icon button" disabled>
+                <i class="phone icon"></i>
+                Call
+              </button>
+            </div>
+          </div>
+          <div class="field">
+            <button id="answer-btn" class="ui positive button" disabled>Answer</button>
+            <button id="hangup-btn" class="ui negative button" disabled>Hangup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <table id="dtmf-keyboard" class="ui basi unstackable collapsing celled table">
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>0</td>
+          <td>#</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="https://unpkg.com/africastalking-client@1.0.2/build/africastalking.js"></script>
+  <script src="js/index.js"></script>
+</body>
