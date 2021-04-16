@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 const axios = require('axios');
 
-const apiKey = '18a0ab0cd1e6a6d16cd38ed464b7839a2ffef87431077a60c1b573ef644d0ca5';
-const username = 'lexeme';
-const phoneNumber = '+254711082033';
+const apiKey = '';
+const username = '';
+const phoneNumber = '';
 
 let lastRegisteredClient = `${username}.browser1`;
 
